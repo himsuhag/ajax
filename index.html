@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>jforms</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                var email = $('#demo').val();
+                var name = $('#name').val();
+                var check = $("checkbox").val();
+                
+                check = false;
+                if(email.length == ""){
+                    $('#showerror').html('please enter email id');
+                    $('#demo').focus();
+                    $('#showerror').css('color','red');
+                    return false;
+                }
+                else if(email)
+                {
+                    $('#showerror').html("");
+                    return false;
+                }
+            
+          else if (name.length == "")
+                {
+            $('#show').html('please enter a name');
+            $('#name').focus();
+            $('#show').css('color','red');
+                return false;
+                }
+                else if(check!=true){
+                    $("#showerror").html("please agree to the conditions");
+                    $("checkbox").focus();
+                    return false;
+
+                }
+                
+            });
+            });
+        
+       </script>
+    </head>
+    <body>
+        
+        <form>
+            <label>email</label>
+        <input type="text" id="demo" placeholder="email required" required><br><br>
+        <div id="showerror"> </div>
+        <label>name</label>
+        <input type="text" id="name" placeholder="enter name" required><br><br>
+        <p id="show"> </p>
+        <input type= "checkbox">read the agree to the conditions carefully <br>
+        <button id='b1'>submit</button>
+        </form>
+    </body>
+
+</html>
